@@ -3,6 +3,7 @@
     grid-template-columns: 60px 60px 60px 60px;
     grid-template-rows: 60px 60px 60px 60px;
     user-select: none;
+    gap: 4px;
 }
 
 #app button {
