@@ -17,3 +17,7 @@
 #app button:hover {
     background: #1d49aa;
 }
+
+#app button:disabled {
+    visibility: hidden;
+}
