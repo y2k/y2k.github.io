@@ -1,0 +1,84 @@
+:root {
+    --animation-duration: 200ms
+}
+
+html {
+    overflow: hidden;
+    height: 100%;
+}
+
+body {
+    align-items: center;
+    background-color: white;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    margin: 0px;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.game-field {
+    display: grid;
+    gap: 0.9vmin;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    height: 100vmin;
+    user-select: none;
+    width: 100vmin;
+}
+
+.game-field__item {
+    margin: 0px;
+    background: #4676D7;
+    border-radius: 5px;
+    border: 0;
+    color: #fff;
+    font-size: 5vmin;
+    position: relative;
+    animation-fill-mode: none;
+}
+
+@keyframes from-left {
+    0% { left: calc(-100% - 0.9vmin); }
+    100% { left: 0; }
+}
+
+@keyframes from-top {
+    0% { top: calc(-100% - 0.9vmin); }
+    100% { top: 0; }
+}
+
+@keyframes from-bottom {
+    0% { top: calc(100% + 0.9vmin); z-index: 1000; }
+    100% { top: 0; z-index: 0; }
+}
+
+@keyframes from-right {
+    0% { left: calc(100% + 0.9vmin); z-index: 1000; }
+    100% { left: 0; z-index: 0; }
+}
+
+.game-field__item.from-left {
+    animation: from-left var(--animation-duration) ease 1;
+    animation-fill-mode: forwards;
+}
+
+.game-field__item.from-right {
+    animation: from-right var(--animation-duration) ease 1;
+    animation-fill-mode: forwards;
+}
+
+.game-field__item.from-top {
+    animation: from-top var(--animation-duration) ease 1;
+    animation-fill-mode: forwards;
+}
+
+.game-field__item.from-bottom {
+    animation: from-bottom var(--animation-duration) ease 1;
+    animation-fill-mode: forwards;
+}
+
+.game-field__item.empty {
+    background: white;
+}
