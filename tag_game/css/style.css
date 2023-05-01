@@ -2,13 +2,13 @@
     --animation-duration: 200ms;
 
     --color-white: hsl(0, 0%, 100%);
-    --color-blue: hsl(220, 64%, 56%);
+    --color-blue: hsl(220, 65%, 55%);
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
         --color-white: hsl(0, 0%, 10%);
-        --color-blue: hsl(220, 50%, 35%);
+        --color-blue: hsl(220, 50%, 40%);
     }
 }
 
