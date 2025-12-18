@@ -1,0 +1,36 @@
+name: Docker Image CI
+
+on:
+  repository_dispatch:
+    types: [image_updated]
+
+# jobs:
+#   build:
+#     environment: CI
+#     runs-on: ubuntu-latest
+#     steps:
+#     - uses: actions/checkout@v3
+#     - run: echo '${{ toJson(github.event.client_payload) }}'
+
+jobs:
+  build:
+    environment: CI
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Важно для пуша
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Make changes
+        run: |
+          date >> report.txt
+          echo "Updated by dispatch" >> report.txt
+
+      - name: Commit and Push
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "docs: automatic update from dispatch"
+          git push
