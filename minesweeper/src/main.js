@@ -1,6 +1,6 @@
 import * as prelude from './prelude.js';
 export const __namespace="main";
-import * as u from './utils.js';
+import * as u from '././utils.js';
 export const CELL_MINE=-2;
 export const BOMB_COUNT=7;
 export const FIELD_WIDTH=6;
@@ -185,7 +185,7 @@ p__26=p__25
 return p__26;
 });
 export const view=((state) => {
-return ["div",{"style":"width: 100%; height: 100%; display: flex; align_items: center; justify_content: center;"},[].concat(["div",{"style":("" + "width: 100vmin; height: 100vmin; display: grid; grid_template_columns: repeat(" + FIELD_WIDTH + ", 1fr); grid_template_rows: repeat(" + FIELD_WIDTH + ", 1fr); gap: 4px;")}],state.field.map(((x,i) => {
+return ["div",{"style":"width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;"},[].concat(["div",{"style":("" + "width: 100vmin; height: 100vmin; display: grid; grid-template-columns: repeat(" + FIELD_WIDTH + ", 1fr); grid-template-rows: repeat(" + FIELD_WIDTH + ", 1fr); gap: 4px;")}],state.field.map(((x,i) => {
 let p__30;
 let p__29;
 if ((x===-1)) {
@@ -206,9 +206,9 @@ p__28=p__27
 p__29=p__28
 };
 if (p__29) {
-p__30="var(__color_tile)"
+p__30="var(--color-tile)"
 } else {
-p__30="var(__color_tile_opened)"
+p__30="var(--color-tile-opened)"
 };
 let p__36;
 let p__32;
@@ -246,7 +246,7 @@ p__35=p__34
 };
 p__36=p__35
 };
-return ["div",{"style":("" + "overflow: hidden; display: flex; align_items: center; justify_content: center; width: 100%; height: 100%; position: relative; cursor: default; border_radius: 1vw; background_color: " + p__30),"onclick":("" + "dispatch(event, \"clicked\", " + i + ")"),"oncontextmenu":("" + "dispatch(event, \"oncontextmenu\", " + i + ")")},["div",{"style":"font_size: 6vw; color: var(__color_text);"},p__36]];
+return ["div",{"style":("" + "overflow: hidden; display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; position: relative; cursor: default; border-radius: 1vw; background-color: " + p__30),"onclick":("" + "dispatch(event, \"clicked\", " + i + ")"),"oncontextmenu":("" + "dispatch(event, \"oncontextmenu\", " + i + ")")},["div",{"style":"font-size: 6vw; color: var(--color-text);"},p__36]];
 })))];
 });
 export const make_state=(() => {
